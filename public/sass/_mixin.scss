@@ -1,0 +1,191 @@
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content  :$content;
+	display  :$display;
+	position :$pos;
+}
+
+
+
+@mixin border-radius($arg){
+	-webkit-border-radius :$arg;
+	-moz-border-radius    :$arg;
+	-ms-border-radius     :$arg;
+	-o-border-radius      :$arg;
+	border-radius         :$arg;
+}
+
+@mixin border-bottom-left-radius($arg){
+	-webkit-border-bottom-left-radius :$arg;
+	-moz-border-bottom-left-radius    :$arg;
+	-ms-border-bottom-left-radius     :$arg;
+	-o-border-bottom-left-radius      :$arg;
+	border-bottom-left-radius         :$arg;
+}
+
+@mixin border-bottom-right-radius($arg){
+	-webkit-border-bottom-right-radius :$arg;
+	-moz-border-bottom-right-radius    :$arg;
+	-ms-border-bottom-right-radius     :$arg;
+	-o-border-bottom-right-radius      :$arg;
+	border-bottom-right-radius         :$arg;
+}
+
+@mixin border-top-left-radius($arg){
+	-webkit-border-top-left-radius :$arg;
+	-moz-border-top-left-radius    :$arg;
+	-ms-border-top-left-radius     :$arg;
+	-o-border-top-left-radius      :$arg;
+	border-top-left-radius         :$arg;
+}
+
+@mixin border-top-right-radius($arg){
+	-webkit-border-top-right-radius :$arg;
+	-moz-border-top-right-radius    :$arg;
+	-ms-border-top-right-radius     :$arg;
+	-o-border-top-right-radius      :$arg;
+	border-top-right-radius         :$arg;
+}
+
+@mixin box-shadow($args...){
+	webkit-box-shadow :$args;
+	-moz-box-shadow   :$args;
+	-ms-box-shadow    :$args;
+	-o-box-shadow     :$args;
+	box-shadow        :$args;
+}
+
+@mixin border-image($args...){
+	-webkit-border-image :$args;
+	-moz-border-image    :$args;
+	-ms-border-image     :$args;
+	-o-border-image      :$args;
+	border-image         :$args;
+}
+
+@mixin transform($args...){
+	-webkit-transform :$args;
+	-moz-transform    :$args;
+	-ms-transform     :$args;
+	-o-transform      :$args;
+	transform         :$args;
+}
+
+@mixin transform-style($arg){
+	-webkit-transform-style :$arg;
+	-moz-transform-style    :$arg;
+	-ms-transform-style     :$arg;
+	-o-transform-style      :$arg;
+	transform-style         :$arg;
+}
+
+@mixin transform-origin($arg){
+	-webkit-transform-origin :$arg;
+	-moz-transform-origin    :$arg;
+	-ms-transform-origin     :$arg;
+	-o-transform-origin      :$arg;
+	transform-origin         :$arg;
+}
+
+@mixin backface-visibility($arg){
+	-webkit-backface-visibility :$arg;
+	-moz-backface-visibility    :$arg;
+	-ms-backface-visibility     :$arg;
+	-o-backface-visibility      :$arg;
+	backface-visibility         :$arg;
+}
+
+@mixin input-placeholder{
+	&.placeholder{
+		@content;
+	}
+	&:placeholder-shown{
+
+	}
+	&:-moz-placeholder{
+		@content;
+	}
+	&::-moz-placeholder{
+		@content;
+	}
+	&:-ms-input-placeholder{
+		@content;
+	}
+	&::-webkit-input-placeholder{
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name){
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($args){
+	-webkit-animation :$args;
+	-moz-animation    :$args;
+	-ms-animation     :$args;
+	-o-animation      :$args;
+	animation         :$args;
+}
+
+@mixin animation-delay($args){
+	-webkit-animation-delay :$args;
+	-moz-animation-delay    :$args;
+	-ms-animation-delay     :$args;
+	-o-animation-delay      :$args;
+	animation-delay         :$args;
+}
+@mixin animation-timing($args){
+	-webkit-animation-timing-function :$args;
+	-moz-animation-timing-function    :$args;
+	-ms-animation-timing-function     :$args;
+	-o-animation-timing-function      :$args;
+	animation-timing-function         :$args;
+}
+
+@mixin transition($args...){
+	-webkit-transition :$args;
+	-moz-transition    :$args;
+	-ms-transition     :$args;
+	-o-transition      :$args;
+	transition         :$args;
+}
+
+@mixin transition-duration($args...){
+	-webkit-transition-duration :$args;
+	-moz-transition-duration    :$args;
+	-ms-transition-duration     :$args;
+	-o-transition-duration      :$args;
+	transition-duration         :$args;
+}
+
+@mixin perspective($args){
+	-webkit-perspective :$args;
+	-moz-perspective    :$args;
+	-ms-perspective     :$args;
+	-o-perspective      :$args;
+	perspective         :$args;
+}
+
+@mixin filter($args...){
+	-webkit-filter    :$args;
+	filter            :$args;
+}
+
+@mixin clip-path($args...){
+	-webkit-clip-path :$args;
+	clip-path         :$args;
+}

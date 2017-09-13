@@ -1,0 +1,625 @@
+@import '_variables';
+@import '_mixin';
+
+/*
+* navbar top elements
+*/
+nav{
+	height: 8%;
+	/*min-height: 57px;*/
+}
+
+
+/*set width and grid layout*/
+.navbar_top,
+.navbar_bottom{
+	width    :100%;
+	display  :block;
+	position :relative;
+	z-index  :100;
+}
+.navbar_top{
+	height:100%;
+}
+.navbar_bottom{
+	bottom   :0;
+	position :absolute;
+	height:8%;
+	/*min-height: 57px;*/
+}
+
+.nav{
+	display         :flex;
+	align-items     :center;
+	justify-content :center;
+	height :100%;
+}
+
+.navbar_top .nav > li{
+	font-size          :calc(100% + 0.5vw);
+	float              :left;
+	@include transform(skew(-45deg));
+	@include box-shadow(inset 3px 0 0 0 $primary-border-color_10, inset 14px 0 20px -11px $primary-box-shadow_10);
+	margin             :10px 0 10px -1px;
+	height: 70%;
+}
+
+.navbar_top .nav > li:before,
+.navbar_top .nav > li:after{
+	content  :"";
+	position :absolute;
+	height   :100%;
+}
+
+.navbar_top .nav > li a{
+	@include transform(skew(45deg));
+}
+
+body .navbar_top li{
+	background-color :transparent;
+	outline          :none;
+}
+
+body .navbar_top a{
+	background-color :transparent;
+	color            :$primary-color_10;
+	z-index          :100;
+	outline          :none;
+	height:100%;
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+}
+
+body .navbar_top a:hover,
+body .navbar_top li.active{
+	background-color :transparent;
+}
+
+.navbar_top .nav > li{
+	@include transition(color 0.25s);
+}
+
+.navbar_top .nav > li:before,
+.navbar_top .nav > li:after{
+	z-index :0;
+	border  :2px solid transparent;
+	width   :0;
+	height  :0;
+}
+
+.navbar_top .nav > li:before{
+	@include box-shadow(inset -13px 9px 20px -10px $primary-box-shadow_10);
+	top                :0;
+	left               :0;
+}
+
+.navbar_top .nav > li:after{
+	@include box-shadow(inset 0 -13px 20px -10px $primary-box-shadow_10);
+	bottom             :0;
+	right              :0;
+}
+
+.navbar_top .nav > li:hover:before,
+.navbar_top .nav > li:hover:after,
+.navbar_top li.active:before,
+.navbar_top li.active:after{
+	width  :100%;
+	height :101%;
+}
+
+.navbar_top .nav > li:hover:before,
+.navbar_top li.active:before{
+	border-top-color   :$primary-border-color_10;
+	border-right-color :$primary-border-color_10;
+	@include transition(width 0.15s ease-out, height 0.15s ease-out 0.15s);
+
+}
+
+.navbar_top .nav > li:hover:after,
+.navbar_top li.active:after{
+	border-bottom-color :$primary-border-color_10;
+	border-left-color   :$primary-border-color_10;
+	@include transition(0s ease-out 0.3s, width 0.15s ease-out 0.3s, height 0.15s ease-out 0.45s);
+}
+
+body .navbar_top a:focus,
+body .navbar_top li:focus{
+	background-color :transparent;
+}
+
+/*
+* navbar bottom
+ */
+.navbar_bottom .arrow-pad-wrapper{
+	-webkit-transition :-webkit-filter 0.20s linear, -webkit-transform 0.20s linear;
+	-moz-transition    :filter 0.20s linear, -moz-transform 0.20s linear;
+	-ms-transition     :filter 0.20s linear, -ms-transform 0.20s linear;
+	-o-transition      :filter 0.20s linear, -o-transform 0.20s linear;
+	transition         :filter 0.20s linear, transform 0.20s linear;
+	width              :60%;
+	display            :flex;
+	align-items        :center;
+	justify-content    :center;
+	@include filter(drop-shadow(0px 0px 4px $primary-border-color_10));
+	@include transform(rotateY(0deg));
+}
+
+.navbar_bottom .arrow-pad-wrapper.left{
+	@include filter(drop-shadow(3px 0px 3px $primary-border-color_10));
+	@include transform(rotateY(-25deg));
+}
+
+.navbar_bottom .arrow-pad-wrapper.right{
+	@include filter(drop-shadow(-3px 0px 3px $primary-border-color_10));
+	@include transform(rotateY(25deg));
+}
+
+.navbar_bottom .arrow-pad-wrapper.up{
+	@include filter(drop-shadow(0px -3px 3px $primary-border-color_10));
+	@include transform(rotateY(-25deg));
+}
+
+.navbar_bottom .arrow-pad-wrapper.down{
+	@include filter(drop-shadow(0px 3px 3px $primary-border-color_10));
+	@include transform(rotateY(25deg));
+}
+
+.arrow-pad{
+	width             :49px;
+	height            :100%;
+	position          :absolute;
+	/*background         :#42edf8;*/
+	border            :5px double $primary-border-color_10;
+	@include border-radius(100%);
+	@include clip-path(polygon(0 35%, 35% 35%, 35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%));
+}
+
+body .navbar_bottom .nav .contact_me{
+	width            :20%;
+	background-color :transparent;
+	outline          :none;
+}
+
+body .navbar_bottom .nav .contact_me a{
+	padding-top :5%;
+}
+
+body .navbar_bottom .nav .contact_me a:hover,
+body .navbar_bottom .nav .contact_me a:focus{
+	background :transparent none;
+}
+
+.navbar_bottom .contact_me a:hover{
+	cursor :pointer
+}
+
+.navbar_bottom .nav > li{
+	height :calc(100% - 20px);
+}
+
+.navbar_bottom .nav{
+	width  :80%;
+	margin :auto;
+	font-size: calc(100% + 0.2vw);
+}
+
+/*Parallelograms*/
+.navbar_top:before,
+.navbar_bottom:before{
+	content    :"";
+	position   :absolute;
+	height     :50%;
+	width      :10%;
+	background :$primary-background-color_05;
+}
+
+.navbar_top:before{
+	top               :100%;
+	@include clip-path(polygon(100% 0, 75% 100%, 100% 100%, 0 100%, 0 0));
+	border-bottom     :1px solid transparent;
+
+	-moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+	-webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+	border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+}
+
+.navbar_bottom:before{
+	bottom            :100%;
+	@include clip-path(polygon(75% 0, 100% 100%, 100% 100%, 0 100%, 0 0));
+	border-top        :1px solid transparent;
+
+	-moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+	-webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+	border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 100%) 1;
+}
+
+/*Parallelogram Clips*/
+.clip-up-left,
+.clip-up-right,
+.clip-down-left,
+.clip-down-right{
+	position   :absolute;
+	height     :50%;
+	width      :10%;
+	background :$primary-border-color_10;
+}
+
+.clip-up-left{
+	top               :100%;
+	@include clip-path(polygon(97% 0, 100% 0%, 75% 100%, 72% 100%));
+}
+
+.clip-up-right{
+	right             :0;
+	top               :100%;
+	@include clip-path(polygon(0% 0, 3% 0%, 28% 100%, 25% 100%));
+}
+
+.clip-down-left{
+	bottom            :100%;
+	@include clip-path(polygon(72% 0, 75% 0%, 100% 100%, 97% 100%));
+}
+
+.clip-down-right{
+	right             :0;
+	bottom            :100%;
+	@include clip-path(polygon(25% 0, 28% 0%, 3% 100%, 0% 100%));
+}
+
+/*
+* display:contents; is a fix for firefox to show the clip wrapper
+*/
+.clip-wrapper-up-left,
+.clip-wrapper-up-right,
+.clip-wrapper-down-left,
+.clip-wrapper-down-right{
+	height:100%;
+	width: 100%;
+	position: absolute;
+}
+.clip-wrapper-up-left{
+	@include filter(drop-shadow(2px 0px 4px $primary-border-color_10));
+}
+
+.clip-wrapper-up-right{
+	@include filter(drop-shadow(-2px 0px 4px $primary-border-color_10));
+}
+
+.clip-wrapper-down-left{
+	@include filter(drop-shadow(2px 0px 4px $primary-border-color_10));
+}
+
+.clip-wrapper-down-right{
+	@include filter(drop-shadow(-2px 0px 4px $primary-border-color_10));
+}
+
+/*replace the navbar_top:after so the clip wrapper can be above it*/
+.navbar_top_after_helper{
+	top               :100%;
+	right             :0;
+	@include clip-path(polygon(100% 0, 100% 100%, 100% 100%, 25% 100%, 0 0));
+	border-bottom     :1px solid transparent;
+	position          :absolute;
+	height            :50%;
+	width             :10%;
+	background        :$primary-background-color_05;
+
+	-moz-border-image: -moz-linear-gradient(right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+	-webkit-border-image: -webkit-linear-gradient(right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+	border-image: linear-gradient(to right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+}
+
+.navbar_bottom_after_helper{
+	bottom            :100%;
+	right             :0;
+	@include clip-path(polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 25% 0));
+	border-top        :1px solid transparent;
+	position          :absolute;
+	height            :50%;
+	width             :10%;
+	background        :$primary-background-color_05;
+	-moz-border-image: -moz-linear-gradient(right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+	-webkit-border-image: -webkit-linear-gradient(right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+	border-image: linear-gradient(to right, $primary-border-color_06 0%, rgba(0, 0, 0, 0) 100%) 1;
+}
+
+/*Lines*/
+.lines_middle{
+	background-color :$primary-background-color_05;
+	position         :absolute;
+	top              :6px;
+	height           :calc(100% - 12px);
+	width            :100%;
+
+	/*-moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0%, rgba(66, 237, 248, 0.6) 0%, rgba(0, 0, 0, 0) 100%) 1;*/
+	/*-webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0%, rgba(66, 237, 248, 0.6) 0%, rgba(0, 0, 0, 0) 100%) 1;*/
+	/*border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(66, 237, 248, 0.6) 0%, rgba(0, 0, 0, 0) 100%) 1;*/
+	-moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 25%, $primary-border-color_06 50%, $primary-border-color_06 75%, rgba(0, 0, 0, 0) 100%) 1;
+	-webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 25%, $primary-border-color_06 50%, $primary-border-color_06 75%, rgba(0, 0, 0, 0) 100%) 1;
+	border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, $primary-border-color_06 25%, $primary-border-color_06 50%, $primary-border-color_06 75%, rgba(0, 0, 0, 0) 100%) 1;
+	border-top       :2px solid transparent;
+	border-bottom    :2px solid transparent;
+}
+
+.lines_middle:before,
+.lines_middle:after{
+	content          :"";
+	position         :absolute;
+	width            :100%;
+	height           :6px;
+	background-color :$primary-background-color_05;
+}
+
+.lines_middle:before{
+	top :-8px;
+
+}
+
+.lines_middle:after{
+	bottom :-8px;
+}
+
+.lines_bottom{
+	position      :absolute;
+	top           :13px;
+	height        :calc(100% - 12px);
+	width         :calc(80% + 2px);
+	margin-left   :calc(10% - 1px);
+	border-bottom :1px solid $primary-border-color_06;
+}
+
+.lines_top{
+	position    :absolute;
+	bottom      :13px;
+	height      :calc(100% - 12px);
+	width       :calc(80% + 2px);
+	margin-left :calc(10% - 1px);
+	border-top  :1px solid $primary-border-color_06;
+}
+
+/*Animation*/
+.loading .navbar_top{
+	top :-100px;
+}
+
+.loading .navbar_bottom{
+	bottom :-100px;
+}
+
+.loading-removing .navbar_top{
+	@include animation(from_top 0.7s both linear);
+}
+
+.loading-removing .navbar_bottom{
+	@include animation(from_bottom 0.7s both linear);
+}
+
+@include keyframes(from_top){
+	0%{
+		top :-100px;
+	}
+	50%{
+		top :-50px;
+	}
+	100%{
+		top :0;
+	}
+};
+@include keyframes(from_bottom){
+	0%{
+		bottom :-100px;
+	}
+	50%{
+		bottom :-50px;
+	}
+	100%{
+		bottom :0;
+	}
+};
+
+.navbar_top_mobile{
+	display :none;
+}
+
+@media (max-width :650px){
+
+	nav,
+	.navbar_bottom{
+		height:0;
+		min-height:0;
+	}
+	.navbar_bottom,
+	.navbar_top{
+		display :none;
+	}
+
+	.navbar_top_mobile{
+		display            :block;
+		position           :relative;
+		z-index            :100;
+		top                :-38px;
+		@include transition(0.35s ease top);
+	}
+
+	.navbar_top_mobile a{
+		color: $primary-color_10;
+	}
+
+	.navbar_top_mobile:hover{
+		top :0;
+	}
+
+	body .navbar_top_mobile a:hover,
+	body .navbar_top_mobile a:focus,
+	body .navbar_top_mobile li.active{
+		background-color   :transparent;
+		@include box-shadow(inset 0 16px 20px -15px $primary-box-shadow_10);
+		@include transition(box-shadow 0.25s ease-out 0.25s);
+		color              :$primary-color_10;
+	}
+
+	.navbar_top_mobile .nav > li{
+		@include transition(color 0.25s);
+	}
+
+	.navbar_top_mobile .nav > li:before{
+		content  :"";
+		position :absolute;
+		border   :2px solid transparent;
+		width    :0;
+		height   :0;
+	}
+
+	.navbar_top_mobile .nav > li:before{
+		top  :0;
+		left :0;
+	}
+
+	.navbar_top_mobile .nav > li:hover:before,
+	.navbar_top_mobile li.active:before{
+		width              :100%;
+		border-top-color   :$primary-border-color_10;
+		@include transition(width 0.25s ease-out);
+	}
+
+	.navbar_top_mobile .nav{
+		position :relative;
+		float    :left;
+		left     :50%;
+		margin   :0 auto;
+		padding  :0;
+	}
+
+	.navbar_top_mobile .nav li:first-child{
+		border-left               :1px solid $primary-border-color_06;
+		@include border-bottom-left-radius(65%);
+	}
+
+	.navbar_top_mobile .nav li:last-child{
+		border-right               :1px solid $primary-border-color_06;
+		@include border-bottom-right-radius(65%);
+	}
+
+	.navbar_top_mobile .nav li:nth-child(2):after{
+		content                    :"";
+		position                   :absolute;
+		height                     :10px;
+		width                      :50px;
+		right                      :-25px;
+		bottom                     :-10px;
+		z-index                    :200;
+		@include box-shadow(0 0 12px 1px $primary-box-shadow_06, 0 -1px 20px 2px $primary-box-shadow_06);
+		background                 :$primary-border-color_10;
+		border-bottom-left-radius  :50%;
+		border-bottom-right-radius :50%;
+	}
+
+	.navbar_top_mobile .nav li{
+		width            :25%;
+		position         :relative;
+		float            :left;
+		right            :50%;
+		list-style       :none;
+		border-bottom    :1px solid $primary-border-color_06;
+		background-color :$primary-background-color_10;
+		outline:none;
+	}
+
+	.navbar_top_mobile .nav li a{
+		text-align :center;
+		outline:none;
+	}
+
+}
+
+/*Dropdown's*/
+.nav .dropdown{
+	width            :20%;
+	background-color :transparent;
+	outline          :none;
+}
+
+.nav .dropdown a{
+	padding          :5% 10px 5px;
+	background-color :transparent;
+}
+
+.nav .dropdown a:hover,
+.nav .dropdown a:focus{
+	background :transparent none;
+}
+
+.nav .dropdown .dropdown-menu{
+	bottom           :120%;
+	padding-top      :0;
+	padding-bottom   :0;
+	background-color :$primary-background-color_08;
+	border           :1px solid rgba(12, 103, 161, 0.8);
+	border-bottom    :0;
+	@include box-shadow(inset 0 0 6px 0 $primary-box-shadow_06, 0 0 20px 0 $primary-box-shadow_03);
+	@include border-radius(0);
+	max-height       :0;
+	display          :block;
+	overflow         :hidden;
+	opacity          :0;
+	visibility       :hidden;
+	@include transition(max-height 0.3s, opacity 0.2s 0.1s, visibility 0s 0.3s);
+}
+
+.nav .dropdown.open .dropdown-menu{
+	max-height :200px;
+	opacity    :1;
+	visibility :visible;
+	@include transition(max-height 0.4s, opacity 0.2s, visibility 0s);
+}
+
+.nav .dropdown-menu > li{
+	background-color :transparent;
+	outline          :none;
+}
+
+.nav .dropdown-menu > li > a{
+	color :$primary-color_10;
+}
+
+.nav .dropdown-menu > li > a:hover,
+.nav .dropdown-menu > li > a:focus{
+	color :$primary-color_10;
+}
+
+.nav .dropdown-menu > li > a:before,
+.nav .dropdown-menu > li:before{
+	@include transition-duration(0.3s);
+	content  :'';
+	display  :block;
+	position :absolute;
+	width    :0;
+	height   :22px;
+}
+
+.nav .dropdown-menu > li > a:before{
+	left :0;
+}
+
+.nav .dropdown-menu > li > a:hover:before,
+.nav .dropdown-menu > li > a:focus:before{
+	/*border-right  :5px solid #42edf8;*/
+	/*border-top    :5px solid transparent;*/
+	/*border-bottom :5px solid transparent;*/
+	/*box-shadow    :10px 0 40px 1px rgba(7, 82, 234, 0.75), 6px 0 38px 1px rgba(16, 139, 238, 0.64), 15px 0 65px 2px rgba(0, 112, 202, 0.8);*/
+	@include box-shadow(30px 0 30px 3px $primary-box-shadow_02, 20px 0 30px 3px $primary-box-shadow_04, 10px 0 30px 4px $primary-box-shadow_06, 5px 0 30px 4px $primary-box-shadow_06);
+}
+
+.nav .dropdown-menu > li:before{
+	margin-top :8px;
+	right      :0;
+}
+
+.nav .dropdown-menu > li:hover:before,
+.nav .dropdown-menu > li:focus:before{
+	/*border-left   :5px solid #42edf8;*/
+	/*border-top    :5px solid transparent;*/
+	/*border-bottom :5px solid transparent;*/
+	@include box-shadow(-30px 0 30px 3px $primary-box-shadow_02, -20px 0 30px 3px $primary-box-shadow_04, -10px 0 30px 4px $primary-box-shadow_06, -5px 0 30px 4px $primary-box-shadow_06);
+}

@@ -1,0 +1,8 @@
+<div ng-controller="EducationCtrl" class="row height_100" ng-class="{'scrollbar': $root.mobile}">
+	<ul class="timeline">
+		<li ng-repeat="time in times track by $index" ng-class="{'odd': $odd, 'even': $even}">
+			<header>{{time.time | date:'dd.MM.yyyy'}}</header>
+			<main translate="{{time.name}}"></main>
+		</li>
+	</ul>
+</div>

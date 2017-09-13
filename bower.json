@@ -1,0 +1,36 @@
+{
+	"name":"portfolio",
+	"version":"1.0.0",
+	"description":"",
+	"private":true,
+	"dependencies":{
+		"angular":"^1.6.5",
+		"angular-aria":"^1.6.5",
+		"angular-animate":"^1.6.5",
+		"angular-messages":"^1.6.5",
+		"angular-resource":"^1.6.5",
+		"angular-route":"^1.6.5",
+		"angular-touch":"^1.6.5",
+		"bootstrap":"^3.3.7",
+		"jquery":"^3.2.1",
+		"oclazyload":"^1.1.0",
+		"angular-translate":"^2.15.2",
+		"angular-translate-loader-static-files":"^2.15.2",
+		"mw-error-messages":"^1.2.0",
+		"mw-datepicker-range":"^1.1.0"
+	},
+	"main":"index.js",
+	"license":"MIT",
+	"homepage":"",
+	"ignore":[
+		"**/.*",
+		".idea",
+		"bower_components",
+		"node_modules",
+		"public/dist",
+		"public/zipped",
+		"server/babel",
+		"server/config"
+	],
+	"devDependencies":{}
+}

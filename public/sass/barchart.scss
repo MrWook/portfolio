@@ -1,0 +1,219 @@
+@import '_variables';
+@import '_mixin';
+
+.skills{
+	height   :100%;
+	margin   :auto;
+	position :relative;
+}
+
+.lines{
+	position   :relative;
+	list-style :none;
+}
+
+.lines .line{
+	position   :absolute;
+	background :rgba(66, 237, 248, 0.6);
+}
+
+.lines .line span{
+	position   :absolute;
+	display    :block;
+}
+
+.charts{
+	height   :100%;
+	position :absolute;
+	top      :0;
+	left     :0;
+}
+
+.charts ul{
+	overflow   :hidden;
+	list-style :none;
+}
+
+.chart_bar{
+	opacity            :0;
+	@include animation(1s move_in ease forwards);
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06, 0 0 20px 2px $primary-box-shadow_03);
+	background-color   :$primary-background-color_08;
+}
+
+@media (max-width :650px){
+	.skills{
+		width :90%;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	.lines{
+		height :95%;
+		width:90%;
+		min-height:600px;
+	}
+
+	.lines .line{
+		height :inherit;
+		width  :1px;
+	}
+
+	.lines .line span{
+		left :25px;
+		bottom: 0;
+		@include transform(rotate(-90deg));
+		@include transform-origin(bottom left);
+	}
+
+	.charts{
+		width :100%;
+	}
+
+	.charts ul{
+		padding-left :1px;
+	}
+
+	.chart_bar{
+		height        :30px;
+		margin-bottom :10px;
+	}
+
+	.chart_bar span{
+		padding-left :10px;
+		line-height  :30px;
+	}
+	@include keyframes(move_in){
+		0%{
+			@include transform(translateX(-200%));
+			opacity   :1;
+		}
+		100%{
+			@include transform(translateX(0));
+			opacity   :1;
+		}
+	};
+}
+
+@media (min-width :650px){
+
+	.skills{
+		height     :90%;
+		margin-top :5%;
+		width      :100%;
+	}
+
+	.lines{
+		height       :100%;
+		padding-left :0;
+	}
+
+	.lines .line{
+		height :1px;
+		width  :100%;
+	}
+
+	.lines .line span{
+		right :0;
+		bottom     :-5%;
+	}
+
+	.charts{
+		width :90%;
+	}
+
+	.charts ul{
+		padding-left   :0;
+		margin-bottom  :0;
+		position       :relative;
+		bottom         :0;
+		width          :100%;
+		display        :flex;
+		align-items    :flex-end;
+		height         :100%;
+		padding-bottom :1px;
+	}
+
+	.charts ul:first-child{
+		padding-left :15px;
+	}
+
+	.chart_bar{
+		position :relative;
+	}
+
+	.chart_bar span{
+		margin-left      :100%;
+		position         :absolute;
+		@include transform(rotate(-90deg));
+		@include transform-origin(bottom left);
+		bottom           :5px;
+	}
+
+	@include keyframes(move_in){
+		0%{
+			@include transform(translateY(200%));
+			opacity   :1;
+		}
+		100%{
+			@include transform(translateY(0));
+			opacity   :1;
+		}
+	};
+}
+
+.charts .chart_bar:nth-of-type(1){
+	@include animation-delay(0.3s);
+}
+
+.charts .chart_bar:nth-of-type(2){
+	@include animation-delay(0.5s);
+}
+
+.charts .chart_bar:nth-of-type(3){
+	@include animation-delay(0.7s);
+}
+
+.charts .chart_bar:nth-of-type(4){
+	@include animation-delay(0.9s);
+}
+
+.charts .chart_bar:nth-of-type(5){
+	@include animation-delay(1.1s);
+}
+
+.charts .chart_bar:nth-of-type(6){
+	@include animation-delay(1.3s);
+}
+
+.charts .chart_bar:nth-of-type(7){
+	@include animation-delay(1.5s);
+}
+
+.charts .chart_bar:nth-of-type(8){
+	@include animation-delay(1.7s);
+}
+
+.charts .chart_bar:nth-of-type(9){
+	@include animation-delay(1.9s);
+}
+
+.charts .chart_bar:nth-of-type(10){
+	@include animation-delay(2.1s);
+}
+
+.charts .chart_bar:nth-of-type(11){
+	@include animation-delay(2.3s);
+}
+
+.charts .chart_bar:nth-of-type(12){
+	@include animation-delay(2.5s);
+}
+
+.charts .chart_bar:nth-of-type(13){
+	@include animation-delay(2.7s);
+}
+
+.charts .chart_bar:nth-of-type(14){
+	@include animation-delay(2.9s);
+}

@@ -1,0 +1,30 @@
+<div ng-app="errorMsg" class="row height_100">
+	<link data-require="fontawsome@*" data-semver="4.3.0" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+	<div ng-controller="ErrorMsgCtrl" class="scrollbar height_100">
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXPLANATION"></h4>
+			<p translate="MW_ERROR_MESSAGES_EXPLANATION"></p>
+		</section>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXAMPLE"></h4>
+			<form name="form" novalidate >
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 " mw-error-message="MW_ERROR_MESSAGES_" mw-error-message-options="mwOptions_name">
+					<input title="" type="name" name="name" ng-model="model.name" required/>
+				</div>
+
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 " mw-error-message="MW_ERROR_MESSAGES_" mw-error-message-options="mwOptions_email">
+					<input title="" type="email" name="email" ng-model="model.email" required/>
+				</div>
+
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 " mw-error-message="MW_ERROR_MESSAGES_" mw-error-message-options="mwOptions_age">
+					<input title="" type="name" name="age" ng-model="model.age" require birthday/>
+				</div>
+
+				<ol class="wm_error_tooltip">
+					<li ng-repeat="(key, value) in tooltip_content">{{'"'+value+'"'}}</li>
+				</ol>
+			</form>
+			<span><a>Github Page</a></span>
+		</section>
+	</div>
+</div>

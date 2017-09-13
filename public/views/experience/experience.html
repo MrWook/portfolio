@@ -1,0 +1,30 @@
+<div ng-controller="ExperienceCtrl" class="row height_100">
+	<div class="skills scrollbar" ng-if="$root.mobile">
+		<ul class="lines">
+			<li class="line" ng-repeat="skill in skills | orderBy:'-' track by $index" ng-style="::{left: skill.value+'%'}">
+				<span translate="{{::skill.name}}"></span>
+			</li>
+		</ul>
+		<div class="charts">
+			<ul>
+				<li class="chart_bar" ng-repeat="data in barchart_data track by $index" ng-style="::{width: data.value+'%'}">
+					<span>{{::data.name}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="skills" ng-if="!$root.mobile">
+		<ul class="lines">
+			<li class="line box" ng-repeat="skill in skills track by $index" ng-style="::{bottom: skill.value+'%'}">
+				<span>{{::skill.name|translate}}</span>
+			</li>
+		</ul>
+		<div class="charts">
+			<ul>
+				<li class="chart_bar" ng-repeat="data in barchart_data track by $index" ng-style="::{height: data.value+'%', width: barchart_width+'%', 'margin-right': barchart_width+'%'}">
+					<span class="chart_label">{{::data.name}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

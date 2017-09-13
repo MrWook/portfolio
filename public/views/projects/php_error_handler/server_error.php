@@ -1,0 +1,4 @@
+<?php
+	asd
+asdasd()
+asd
