@@ -12,8 +12,12 @@ router.put('/contact', function(req, res) {
 		"email": msg.email,
 		"msg": msg.msg,
 		"date":new Date
+	}, function(err, result) {
+		if(err === null){
+			res.json({type: 'success', text: 'CONTACT_SEND_SUCCESS'});
+		}else{
+			res.json({type: 'danger', text: 'CONTACT_SEND_FAILED'});
+		}
 	});
-
-	res.json({type: 'success'});
 });
 module.exports = router;

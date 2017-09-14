@@ -16,6 +16,12 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container">
 				<button type="submit" class="btn">{{"ACTION_SAVE"|translate}}</button>
 			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div ng-if="message != undefined" class="alert alert-dismissible" ng-class="'alert-' + (message.type || 'warning')">
+					<button type="button" class="close" ng-click="closeAlert()"><span aria-hidden="true">&times;</span></button>
+					{{ message.text | translate }}
+				</div>
+			</div>
 		</form>
 	</section>
 	<section id="contact"  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
