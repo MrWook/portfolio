@@ -68,6 +68,7 @@
 	box-shadow: none;
 	margin-top: 10px;
 	border:0;
+	text-transform:none;
 }
 
 .alert .close{
@@ -142,3 +143,11 @@
 		margin-bottom:0;
 	}
 };
+
+.alert ul li{
+	list-style-type: none;
+}
+
+.alert ul > :first-child {
+	list-style-type: disc;
+}

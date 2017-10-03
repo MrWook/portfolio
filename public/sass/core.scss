@@ -64,7 +64,7 @@ body{
 .page{
 	height    :100%;
 	padding   :3% 6% 3% 6%;
-	font-size :calc(100% + 0.5vw);
+	font-size :calc(100% + 0.3vw);
 }
 
 /*set color*/
@@ -111,18 +111,37 @@ h5{
 	font-size :calc(100% + 0.6vw);
 }
 
+h6{
+	font-size :calc(100% + 0.5vw);
+}
+
 div,
 a{
 	outline :none;
 }
+a{
+	cursor: pointer;
+}
 
 /*sections*/
-section h4{
+section h4,
+section h6{
 	border-bottom        :1px solid transparent;
 	-moz-border-image    :-moz-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
 	-webkit-border-image :-webkit-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
 	-o-border-image      :-o-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
 	border-image         :linear-gradient(to right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
+}
+
+.height_100{
+	height :100%;
+}
+.padding_top_15{
+	padding-top:15px;
+}
+
+.continuous_text{
+	text-transform:none;
 }
 
 /*custom scrollbar for webkit*/
@@ -143,11 +162,4 @@ section h4{
 .scrollbar::-webkit-scrollbar-thumb{
 	@include border-radius(10px);
 	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06);
-}
-
-.height_100{
-	height :100%;
-}
-.padding_top_15{
-	padding-top:15px;
 }
