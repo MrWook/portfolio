@@ -3,19 +3,15 @@
 	include('mw-php-error.php');
 	error_init('logging');
 	function logging($type, $log_object, $dataset){
-		//write into log file
-		$myfile = fopen("log.txt", "a");
-		$text = json_encode([
+		//response with a clean text
+		$response = [
+			'type' => 'success',
+			'text' => 'PHP_ERROR_HANDLER_SUCCESS',
+			'data' => [
 				"date" => date("Y-m-d H:i:s"),
 				"log_object" => $log_object,
 				"dataset" => $dataset
-			]).PHP_EOL;
-		fwrite($myfile, $text);
-		fclose($myfile);
-		//response with a clean text
-		$response = [
-			'type' => 'warning',
-			'text' => 'An error occured'
+			]
 		];
 		echo json_encode($response);
 	}

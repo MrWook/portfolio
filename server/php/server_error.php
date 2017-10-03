@@ -1,4 +1,4 @@
 <?php
 	asd
-asdasd()
+Im_an_error()
 asd
