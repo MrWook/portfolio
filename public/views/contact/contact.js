@@ -1,6 +1,7 @@
 'use strict';
-angular.module('portfolio').controller('ContactCtrl',['$scope', '$http', function($scope, $http){
-	$scope.model= {};
+angular.module('portfolio').controller('ContactCtrl',['$scope', '$http', 'PPconfig', function($scope, $http, PPconfig){
+	$scope.model = {};
+	$scope.page = PPconfig.github;
 	//send the message if the form is valid
 	$scope.send = function(){
 		if($scope.form.$valid){
