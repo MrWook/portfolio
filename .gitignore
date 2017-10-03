@@ -5,3 +5,4 @@ public/dist/
 public/zipped/
 server/babel/
 server/config/
+.user.ini
