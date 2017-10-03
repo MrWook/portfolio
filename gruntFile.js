@@ -128,13 +128,9 @@ module.exports = function(grunt) {
 			'public/css/star.css'
 		],
 		watch: {
-			css: {
-				files: ['public/css/**/*.css'],
-				tasks: ['cssmin']
-			},
 			sass: {
 				files: ['public/sass/**/*.scss'],
-				tasks: ['sass']
+				tasks: ['sass', 'cssmin', 'compress', 'clean']
 			},
 			// js: {
 			// 	files: ['public/js/**/*.js'],
@@ -159,7 +155,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('default', ['babel', 'uglify', 'sass', 'cssmin', 'clean', 'compress', 'concurrent']);
+	grunt.registerTask('default', ['babel', 'uglify', 'sass', 'cssmin', 'compress', 'clean', 'concurrent']);
 
 
 };
