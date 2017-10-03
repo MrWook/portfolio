@@ -74,3 +74,20 @@ angular.module('portfolio').factory('$exceptionHandler', ['$injector', '$log', '
 			});
 	}
 }]);
+
+angular.module('portfolio').factory('httpInterceptor', ['$q', '$timeout', '$injector', '$rootScope', function($q, $timeout, $injector, $rootScope) {
+	return {
+		request: function(config) {
+			if (config.data && typeof config.data === 'object') {
+				config.data = $.param(config.data);
+			}
+			return config || $q.when(config);
+		},
+		responseError: function (rejection){
+			return $q.reject(rejection);
+		},
+		response: function(response) {
+			return response;
+		}
+	};
+}]);
