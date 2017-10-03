@@ -20,6 +20,7 @@ app.use(helmet({
 			styleSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/"],
 			imgSrc: ["'self'", 'data:'],
 			fontSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/"],
+			scriptSrc: ["'self'", "'unsafe-eval'"]
 		}
 	},
 	expectCt: true,
@@ -45,10 +46,11 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 //error handler
 app.use(function(err, req, res, next) {
 	res.status(err.status);
-	res.render('error', {
-		message: err.message,
-		error: err
-	});
+	console.log(err);
+	// res.render('error', {
+	// 	message: err.message,
+	// 	error: err
+	// });
 });
 // Make db and root Path accessible to the router
 app.use(function(req,res,next){
