@@ -4,8 +4,6 @@
 	position :$pos;
 }
 
-
-
 @mixin border-radius($arg){
 	-webkit-border-radius :$arg;
 	-moz-border-radius    :$arg;
@@ -148,6 +146,7 @@
 	-o-animation-delay      :$args;
 	animation-delay         :$args;
 }
+
 @mixin animation-timing($args){
 	-webkit-animation-timing-function :$args;
 	-moz-animation-timing-function    :$args;
@@ -181,11 +180,21 @@
 }
 
 @mixin filter($args...){
-	-webkit-filter    :$args;
-	filter            :$args;
+	-webkit-filter :$args;
+	filter         :$args;
 }
 
 @mixin clip-path($args...){
 	-webkit-clip-path :$args;
 	clip-path         :$args;
+}
+
+@mixin flex-direction($args...){
+	-webkit-flex-direction :$args;
+	flex-direction         :$args;
+}
+
+@mixin display-flex(){
+	display :flex;
+	display :-webkit-flex;
 }
