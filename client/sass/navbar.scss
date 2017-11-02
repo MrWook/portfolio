@@ -51,7 +51,7 @@ nav{
 	height   :100%;
 }
 
-.navbar_top .nav > li a{
+.navbar_top .nav > li a span{
 	@include transform(skew(45deg));
 }
 

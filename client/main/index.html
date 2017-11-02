@@ -81,7 +81,9 @@
 					<div class="lines_bottom"></div>
 					<ul class="nav">
 						<li ng-repeat="page in menu track by $index" ng-class="{'active': index == $index}">
-							<a ng-href="{{path}}{{page.name}}">{{'MENU_'+page.name|uppercase|translate}}</a>
+							<a ng-href="{{path}}{{page.name}}">
+								<span>{{'MENU_'+page.name|uppercase|translate}}</span>
+							</a>
 						</li>
 					</ul>
 				</header>
