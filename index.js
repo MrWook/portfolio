@@ -39,7 +39,6 @@ app.use(function(req,res,next){
 });
 //make folder accessible for the application
 app.use(express.static(__dirname+"/public"));
-app.use(express.static(__dirname+"/bower_components"));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -52,22 +51,12 @@ app.use(function(err, req, res, next) {
 	// 	error: err
 	// });
 });
+
 // Make db and root Path accessible to the router
 app.use(function(req,res,next){
 	req.db = db;
 	req.rootPath = __dirname;
 	next();
 });
-// load language
-app.use(require('./server/routes/languages'));
-//get config
-app.use(require('./server/routes/config'));
-//check for browser and load file after the browser
-app.use(require('./server/routes/browser_check'));
-//log error
-app.use(require('./server/routes/error_logging'));
-//contact
-app.use(require('./server/routes/contact'));
-//php error
-app.use(require('./server/routes/php_error'));
 
+app.use(require('./server/router.js'));
