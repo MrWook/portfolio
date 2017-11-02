@@ -156,7 +156,9 @@ app.directive('ppHelper', ['$rootScope', '$timeout', '$animate', function($rootS
 				cross.addClass(direction);
 			}
 			$rootScope.$on('arrow', function(obj, direction){
-				cross_set(direction);
+				if($rootScope.mobile === false){
+					cross_set(direction);
+				}
 			});
 
 		}
