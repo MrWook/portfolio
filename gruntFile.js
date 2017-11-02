@@ -15,9 +15,9 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'public/components/',
-						src: ['*.js'],
-						dest: 'public/babel/'
+						cwd: 'client/',
+						src: ['**/*.js'],
+						dest: 'public/',
 					}
 				]
 			}
@@ -39,14 +39,14 @@ module.exports = function(grunt) {
 						'bower_components/oclazyload/dist/ocLazyLoad.js',
 					],
 					'public/dist/app.min.js': [
-						'public/babel/init.js',
-						'public/babel/config.js',
-						'public/babel/frame_controller.js',
-						'public/babel/factories.js',
-						'public/babel/services.js',
-						'public/babel/filter.js',
-						'public/babel/directives.js',
-						'public/babel/canvas.js',
+						'public/components/init.js',
+						'public/components/config.js',
+						'public/components/frame_controller.js',
+						'public/components/factories.js',
+						'public/components/services.js',
+						'public/components/filter.js',
+						'public/components/directives.js',
+						'public/components/canvas.js',
 					],
 					'public/views/projects/mw_error_messages/extra.js': [
 						'bower_components/angular-messages/angular-messages.js',
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'public/sass/',
+						cwd: 'client/sass/',
 						src: ['**/*.scss'],
 						dest: 'public/css/',
 						ext: '.css'
@@ -101,6 +101,23 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		minifyHtml: {
+			options: {
+				cdata: false,
+				empty: false,
+				quotes: true,
+			},
+			dist: {
+				files: [
+					{
+						expand: true,
+						cwd: 'client/',
+						src: ['**/*.html'],
+						dest: 'public/',
+					}
+				]
+			}
+		},
 		compress: {
 			main: {
 				options: {
@@ -113,28 +130,18 @@ module.exports = function(grunt) {
 				ext: '.gz'
 			}
 		},
-		clean: [
-			'public/babel/',
-			'public/dist/',
-			'public/css/sites/',
-			'public/css/barchart.css',
-			'public/css/canvas.css',
-			'public/css/core.css',
-			'public/css/cube.css',
-			'public/css/loader.css',
-			'public/css/navbar.css',
-			'public/css/notecard.css',
-			'public/css/slider.css',
-			'public/css/star.css'
-		],
 		watch: {
 			sass: {
-				files: ['public/sass/**/*.scss'],
-				tasks: ['sass', 'cssmin', 'compress', 'clean']
+				files: ['client/sass/**/*.scss'],
+				tasks: ['sass', 'cssmin', 'compress']
+			},
+			html: {
+				files: ['client/main/**/*.html', 'client/views/**/*.html'],
+				tasks: ['minifyHtml']
 			},
 			// js: {
-			// 	files: ['public/js/**/*.js'],
-			// 	tasks: ['uglify']
+			// 	files: ['client/**/*.js'],
+			// 	tasks: ['babel', 'uglify']
 			// }
 		},
 		concurrent: {
@@ -149,13 +156,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-minify-html');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('default', ['babel', 'uglify', 'sass', 'cssmin', 'compress', 'clean', 'concurrent']);
+	grunt.registerTask('default', ['babel', 'uglify', 'sass', 'cssmin', 'minifyHtml', 'compress', 'concurrent']);
 
 
 };
