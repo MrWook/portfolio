@@ -24,40 +24,62 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			build: {
-				files: {
-					'public/dist/ext.min.js': [
-						'bower_components/angular/angular.js',
-						'bower_components/angular-animate/angular-animate.js',
-						'bower_components/angular-aria/angular-aria.js',
-						'bower_components/angular-resource/angular-resource.js',
-						'bower_components/angular-route/angular-route.js',
-						'bower_components/angular-touch/angular-touch.js',
-						'bower_components/jquery/dist/jquery.slim.js',
-						'bower_components/bootstrap/dist/js/bootstrap.js',
-						'bower_components/angular-translate/angular-translate.js',
-						'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
-						'bower_components/oclazyload/dist/ocLazyLoad.js',
-					],
-					'public/dist/app.min.js': [
-						'public/components/init.js',
-						'public/components/config.js',
-						'public/components/frame_controller.js',
-						'public/components/factories.js',
-						'public/components/services.js',
-						'public/components/filter.js',
-						'public/components/directives.js',
-						'public/components/canvas.js',
-					],
-					'public/views/projects/mw_error_messages/extra.js': [
-						'bower_components/angular-messages/angular-messages.js',
-						'public/js/ui-bootstrap-tooltips.min.js',
-						'bower_components/mw-error-messages/dist/error_message.js'
-					],
-					'public/views/projects/mw_datepicker_range/extra.js': [
-						'public/js/ui-bootstrap-datepicker.min.js',
-						'bower_components/mw-datepicker-range/dist/mw-datepicker-range.js'
-					],
-				}
+				files:[
+					{
+						expand: false,
+						src: [
+							'bower_components/angular/angular.js',
+							'bower_components/angular-animate/angular-animate.js',
+							'bower_components/angular-aria/angular-aria.js',
+							'bower_components/angular-resource/angular-resource.js',
+							'bower_components/angular-route/angular-route.js',
+							'bower_components/angular-touch/angular-touch.js',
+							'bower_components/jquery/dist/jquery.slim.js',
+							'bower_components/bootstrap/dist/js/bootstrap.js',
+							'bower_components/angular-translate/angular-translate.js',
+							'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+							'bower_components/oclazyload/dist/ocLazyLoad.js',
+						],
+						dest: 'public/dist/ext.min.js'
+					},
+					{
+						expand: false,
+						src: [
+							'public/components/init.js',
+							'public/components/config.js',
+							'public/components/frame_controller.js',
+							'public/components/factories.js',
+							'public/components/services.js',
+							'public/components/filter.js',
+							'public/components/directives.js',
+							'public/components/canvas.js',
+						],
+						dest: 'public/dist/app.min.js'
+					},
+					{
+						expand: false,
+						src: [
+							'bower_components/angular-messages/angular-messages.js',
+							'public/js/ui-bootstrap-tooltips.min.js',
+							'bower_components/mw-error-messages/dist/error_message.js'
+						],
+						dest: 'public/views/projects/mw_error_messages/extra.js'
+					},
+					{
+						expand: false,
+						src: [
+							'public/js/ui-bootstrap-datepicker.min.js',
+							'bower_components/mw-datepicker-range/dist/mw-datepicker-range.js'
+						],
+						dest: 'public/views/projects/mw_datepicker_range/extra.js'
+					},
+					{
+						expand: true,
+						cwd: 'public/views/',
+						src: ['**/*.js'],
+						dest: 'public/views/',
+					}
+				]
 			}
 		},
 		sass: {
@@ -139,10 +161,10 @@ module.exports = function(grunt) {
 				files: ['client/main/**/*.html', 'client/views/**/*.html'],
 				tasks: ['minifyHtml']
 			},
-			// js: {
-			// 	files: ['client/**/*.js'],
-			// 	tasks: ['babel', 'uglify']
-			// }
+			js: {
+				files: ['client/**/*.js'],
+				tasks: ['babel', 'uglify']
+			}
 		},
 		concurrent: {
 			options: {
