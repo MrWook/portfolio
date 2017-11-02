@@ -2,59 +2,153 @@
 @import '../_mixin';
 
 .timeline{
-	padding-top:10px;
-	width: 100%;
-	position:relative;
-	padding-left: 0;
+	height   :90%;
+	position :relative;
+	padding  :0;
 }
 
-.timeline:before{
-	@include pseudo();
-	background-color:$primary-border-color_04;
-	left: 50%;
-	height: 100%;
-	width: 1px;
-	@include box-shadow(0 0 20px 3px $primary-box-shadow_05);
+.timeline_pages{
+	float    :left;
+	position :absolute;
 }
 
-.timeline li{
-	position:relative;
-	list-style  :none;
-	outline: none;
-	width: 50%;
-	text-align:right;
-	padding-right: 4%;
-	margin-bottom: 4%;
-}
-
-.timeline li.odd{
-	margin-left:50%;
-	text-align:left;
-	padding-left: 4%;
-}
-
-.timeline li.even:after,
-.timeline li.odd:before{
+.timeline div.even:after,
+.timeline div.odd:after{
 	@include pseudo();
 	@include border-radius(50%);
 	@include box-shadow(0 0 20px 3px $primary-box-shadow_05);
-	background-color:$primary-color_10;
-	width: 20px;
-	height: 20px;
-	top: calc(50% - 10px);
+	background-color :$primary-color_10;
+	border-radius    :50%;
+	height           :14px;
+	width            :14px;
 }
 
-.timeline li.even:after{
-	right: -10px;
-}
-.timeline li.odd:before{
-	left: -10px;
+.timeline div.even:before,
+.timeline div.odd:before{
+	@include pseudo();
+	background-color :$primary-border-color_04;
+	@include box-shadow(0 0 20px 3px $primary-box-shadow_05);
 }
 
-@media (min-width :650px){
-	.timeline{
-		@include transform(rotate(-90deg));
-		margin-top: 17%;
-		margin-left: -40%;
+.timeline div section{
+	height         :100%;
+	@include display-flex();
+	@include flex-direction(column);
+}
+//mobile
+@media (max-width :650px){
+	.timeline_wrapper{
+		width:50%;
+		float:left;
+		height:100%;
 	}
+
+	.timeline_pages{
+		height :10%;
+	}
+
+	.timeline div.even{
+		width :50%;
+	}
+
+	.timeline div.odd{
+		width :50%;
+		left  :calc(50% - 1px);
+	}
+
+	.timeline div.even:after{
+		right :-7px;
+		top   :calc(50% - 7px);
+	}
+
+	.timeline div.odd:after{
+		left :-7px;
+		top  :calc(50% - 7px);
+	}
+
+	.timeline div.even:before,
+	.timeline div.odd:before{
+		width  :1px;
+		height :100%;
+	}
+
+	.timeline div.even:before{
+		right :0;
+	}
+	.timeline div.odd:before{
+		left :0;
+	}
+
+	.timeline div.even section header,
+	.timeline div.even section main{
+		margin-left :auto;
+	}
+
+	.timeline div section{
+		justify-content :center;
+	}
+
+	.timeline div.even section{
+		padding-right :10px;
+	}
+	.timeline div.odd section{
+		padding-left :10px;
+	}
+}
+//desktop
+@media (min-width :650px){
+	.timeline_wrapper{
+		height:50%;
+	}
+
+	.timeline_pages{
+		width :10%;
+	}
+
+	.timeline div.even{
+		height :50%;
+	}
+
+	.timeline div.odd{
+		height :50%;
+		top    :calc(50% - 1px);
+	}
+
+	.timeline div.even:after{
+		bottom :-7px;
+		left   :calc(50% - 7px);
+	}
+	.timeline div.odd:after{
+		top  :-7px;
+		left :calc(50% - 7px);
+	}
+
+	.timeline div.even:before,
+	.timeline div.odd:before{
+		height :1px;
+		width  :100%;
+	}
+
+	.timeline div.even:before{
+		bottom :0;
+	}
+	.timeline div.odd:before{
+		top :0;
+	}
+
+	.timeline div section header,
+	.timeline div section main{
+		margin-left  :auto;
+		margin-right :auto;
+	}
+
+	.timeline div.even section{
+		justify-content :flex-end;
+		padding-bottom  :10px;
+	}
+	.timeline div.odd section{
+		justify-content :flex-start;
+		padding-top     :10px;
+	}
+
 }

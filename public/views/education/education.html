@@ -1,8 +1,25 @@
 <div ng-controller="EducationCtrl" class="row height_100" ng-class="{'scrollbar': $root.mobile}">
-	<ul class="timeline">
-		<li ng-repeat="time in times track by $index" ng-class="{'odd': $odd, 'even': $even}">
-			<header>{{time.time | date:'dd.MM.yyyy'}}</header>
-			<main translate="{{time.name}}"></main>
-		</li>
-	</ul>
+	<div class="timeline_wrapper">
+		<h6 translate="EDUCATION_CAREER"></h6>
+		<div class="timeline">
+			<div ng-repeat="data in career track by $index" ng-class="{'odd': $odd, 'even': $even}" ng-style="data.style" class="timeline_pages">
+				<section>
+					<header>{{data.time | date:'dd.MM.yyyy'}}</header>
+					<main translate="{{data.name}}"></main>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline_wrapper">
+		<h6 translate="EDUCATION_PROJECTS"></h6>
+		<div class="timeline">
+			<div ng-repeat="data in projects track by $index" ng-class="{'odd': $odd, 'even': $even}" ng-style="data.style" class="timeline_pages">
+				<section>
+					<header>{{data.time | date:'dd.MM.yyyy'}}</header>
+					<main translate="{{data.name}}"></main>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>
