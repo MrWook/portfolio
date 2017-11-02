@@ -41,7 +41,7 @@ datePickerRange.controller('DatePickerRangeCtrl',['$scope', 'mwMultiSelectServic
 
 }]);
 
-datePickerRange.filter('localizeMonth', function($interpolate){
+datePickerRange.filter('localizeMonth',['$interpolate', function($interpolate){
 	return function localizeMonth(input){
 		return input
 			.replace(/JANUARY/g,   $interpolate('{{ \'MONTH_JANUARY\'   | translate}}'))
@@ -58,4 +58,4 @@ datePickerRange.filter('localizeMonth', function($interpolate){
 			.replace(/DECEMBER/g,  $interpolate('{{ \'MONTH_DECEMBER\'  | translate}}'))
 			;
 	};
-});
+}]);
