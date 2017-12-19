@@ -1,6 +1,6 @@
-<div ng-controller="EducationCtrl" class="row height_100" ng-class="{'scrollbar': $root.mobile}">
+<div ng-controller="HistoryCtrl" class="row height_100" ng-class="{'scrollbar': $root.mobile}">
 	<div class="timeline_wrapper">
-		<h6 translate="EDUCATION_CAREER"></h6>
+		<h6 translate="HISTORY_CAREER"></h6>
 		<div class="timeline">
 			<div ng-repeat="data in career track by $index" ng-class="{'odd': $odd, 'even': $even}" ng-style="data.style" class="timeline_pages">
 				<section>
@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="timeline_wrapper">
-		<h6 translate="EDUCATION_PROJECTS"></h6>
+		<h6 translate="HISTORY_PROJECTS"></h6>
 		<div class="timeline">
 			<div ng-repeat="data in projects track by $index" ng-class="{'odd': $odd, 'even': $even}" ng-style="data.style" class="timeline_pages">
 				<section>
