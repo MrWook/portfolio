@@ -97,11 +97,12 @@ app.directive('cubeTransition', ['$rootScope', '$animate', '$swipe', '$document'
 }]);
 
 //helper directive for dom manipulation
-app.directive('ppHelper', ['$rootScope', '$timeout', '$animate', function($rootScope, $timeout, $animate){
+app.directive('ppHelper', ['$rootScope', '$timeout', '$interval', '$animate', function($rootScope, $timeout, $interval, $animate){
 	return {
 		restrict: 'A',
 		link: function(scope, elem, attr) {
 			let content = angular.element(document.querySelector('#content'));
+			let main = angular.element(content.children()[1]);
 			content.removeClass('loading');
 			content.addClass('loading-removing');
 			//check if the animation finished
@@ -111,9 +112,45 @@ app.directive('ppHelper', ['$rootScope', '$timeout', '$animate', function($rootS
 						$rootScope.loader = false;
 					}else if(phase == 'close'){
 						content.removeClass('loading-removing');
+						//deactivate the flicker to use the cube transition
+						main.addClass('flicker-off');
+						main.removeClass('flicker-in');
 					}
 				}
 			);
+
+			function add_flicker(element, extra = false){
+				element.addClass('flicker');
+				if(extra){
+					main.removeClass('flicker-off');
+				}
+				$timeout(function(){
+					if(extra){
+						main.addClass('flicker-off');
+					}
+					element.removeClass('flicker');
+				}, 2000);
+			}
+			// set interval to add the flicker effect on one of the main section of the page every section has a chance of 1 percent
+			$interval(function(){
+				if($rootScope.cube_animate == false){
+					const content_children = content.children();
+					let chance = Math.random();
+					//chance for navbar top
+					if(chance < 0.1){
+						const element = angular.element(content_children[0]);
+						add_flicker(element);
+						//chance for main
+					}else if(chance < 0.2){
+						const element = angular.element(content_children[1]);
+						add_flicker(element, true);
+						//chance for navbar bottom
+					}else if(chance < 0.3){
+						const element = angular.element(content_children[2]);
+						add_flicker(element);
+					}
+				}
+			}, 10000);
 
 			//set the width for arrow pad
 			function set_height(){
