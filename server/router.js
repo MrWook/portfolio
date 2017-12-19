@@ -12,6 +12,7 @@ router.use(require('./routes/error_logging'));
 router.use(require('./routes/contact'));
 //php error
 router.use(require('./routes/php_error'));
-
+//get history
+router.use(require('./routes/history'));
 
 module.exports = router;
