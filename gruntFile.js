@@ -101,17 +101,7 @@ module.exports = function(grunt) {
 					'public/dist/style.min.css': [
 						'bower_components/bootstrap/dist/css/bootstrap.css',
 						'bower_components/bootstrap/dist/css/bootstrap-theme.css',
-						'public/css/core.css',
-						'public/css/cube.css',
-						'public/css/loader.css',
-						'public/css/navbar.css',
-						'public/css/star.css',
-						'public/css/notecard.css',
-						'public/css/barchart.css',
-						'public/css/sites/contact.css',
-						'public/css/sites/education.css',
-						'public/css/sites/mw_error_messages.css',
-						'public/css/sites/mw_datepicker_range.css',
+						'public/css/main.css',
 					],
 					'public/views/projects/mw_error_messages/extra.css': [
 						'public/css/external/ui-bootstrap-tooltips.css',

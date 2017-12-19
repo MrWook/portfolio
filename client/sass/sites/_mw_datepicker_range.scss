@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_mixin';
+@import '../options/variables';
+@import '../options/mixin';
 
 .date_range_picker .form-control[disabled],
 .date_range_picker .form-control[readonly],

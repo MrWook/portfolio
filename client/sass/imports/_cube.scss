@@ -1,7 +1,3 @@
-@import '_variables';
-@import '_mixin';
-
-
 .content{
 	position            :relative;
 	width               :80%;
@@ -27,49 +23,49 @@
 	@include transform-style(preserve-3d);
 }
 
-.cube-animate{
+.flicker-off > .cube-animate{
 	opacity :1;
 }
 
-.cube-left .cube-animate.ng-enter{
+.flicker-off.cube-left .cube-animate.ng-enter{
 	@include transform-origin(0% 50%);
 	@include animation(rotateCubeLeftIn .6s both ease-in);
 }
 
-.cube-left .cube-animate.ng-leave{
+.flicker-off.cube-left .cube-animate.ng-leave{
 	@include transform-origin(100% 50%);
 	@include animation(rotateCubeLeftOut .6s both ease-in);
 	z-index                  :999;
 }
 
-.cube-right .cube-animate.ng-enter{
+.flicker-off.cube-right .cube-animate.ng-enter{
 	@include transform-origin(100% 50%);
 	@include animation(rotateCubeRightIn .6s both ease-in);
 }
 
-.cube-right .cube-animate.ng-leave{
+.flicker-off.cube-right .cube-animate.ng-leave{
 	@include transform-origin(0% 50%);
 	@include animation(rotateCubeRightOut .6s both ease-in);
 	z-index                  :999;
 }
 
-.cube-up .cube-animate.ng-enter{
+.flicker-off.cube-up .cube-animate.ng-enter{
 	@include transform-origin(50% 0%);
 	@include animation(rotateCubeTopIn .6s both ease-in);
 }
 
-.cube-up .cube-animate.ng-leave{
+.flicker-off.cube-up .cube-animate.ng-leave{
 	@include transform-origin(50% 100%);
 	@include animation(rotateCubeTopOut .6s both ease-in);
 	z-index                  :999;
 }
 
-.cube-down .cube-animate.ng-enter{
+.flicker-off.cube-down .cube-animate.ng-enter{
 	@include transform-origin(50% 100%);
 	@include animation(rotateCubeBottomIn .6s both ease-in);
 }
 
-.cube-down .cube-animate.ng-leave{
+.flicker-off.cube-down .cube-animate.ng-leave{
 	@include transform-origin(50% 0%);
 	@include animation(rotateCubeBottomOut .6s both ease-in);
 	z-index                  :999;
