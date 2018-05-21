@@ -1,8 +1,12 @@
 .idea/
 bower_components/
 node_modules/
+public/css/
 public/dist/
+public/js/
+public/modules/
+public/views/
 public/zipped/
-server/babel/
 server/config/
 .user.ini
+database.txt
