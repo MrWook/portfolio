@@ -19,6 +19,18 @@ angular.module('portfolio').controller('ProjectsCtrl',['$scope', '$rootScope', f
 			titel: 'Range datepicker',
 			name: 'mw_datepicker_range',
 			info: ''
+		},
+		{
+			id: 3,
+			titel: 'Alert window',
+			name: 'mw_alert',
+			info: ''
+		},
+		{
+			id: 4,
+			titel: 'Loader spinner',
+			name: 'mw_loader',
+			info: ''
 		}
 	];
 }]);
