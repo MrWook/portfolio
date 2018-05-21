@@ -1,10 +1,11 @@
 const express = require('express');
-const router = express.Router();
-router.get('*gz', function(req, res, next) {
-	if(req.url == '/zipped/style.gz')
+const router  = express.Router();
+router.get('*gz', function(req, res, next){
+	if(req.url.indexOf('.css.gz') !== -1){
 		res.setHeader('Content-Type', 'text/css');
-	else
+	}else{
 		res.setHeader('Content-Type', 'application/javascript');
+	}
 	res.setHeader('Content-Encoding', 'gzip');
 	next();
 });
