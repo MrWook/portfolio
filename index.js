@@ -3,7 +3,12 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const app = express();
 const mongo = require('mongodb');
-const config = cfg = require('./server/config/config_production');
+let config = {};
+if(process.env.NODE_ENV === 'production'){
+	config = require('./server/config/config_production');
+}else{
+	config = require('./server/config/config_development');
+}
 const db  = require('monk')('mongodb://'+config.mongo.user+':'+config.mongo.password+'@'+config.mongo.host+':'+config.mongo.port+'/'+config.mongo.db);
 //set port
 app.listen(config.port);
@@ -17,9 +22,9 @@ app.use(helmet({
 	contentSecurityPolicy: {
 		directives: {
 			defaultSrc: ["'self'"],
-			styleSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/"],
+			styleSrc: ["'self'", "'unsafe-inline'"],
 			imgSrc: ["'self'", 'data:'],
-			fontSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/"],
+			fontSrc: ["'self'"],
 			scriptSrc: ["'self'", "'unsafe-eval'"]
 		}
 	},
@@ -39,13 +44,13 @@ app.use(function(req,res,next){
 });
 //make folder accessible for the application
 app.use(express.static(__dirname+"/public"));
+// app.use(express.static(__dirname+"/bower_components"));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //error handler
 app.use(function(err, req, res, next) {
 	res.status(err.status);
-	console.log(err);
 	// res.render('error', {
 	// 	message: err.message,
 	// 	error: err
