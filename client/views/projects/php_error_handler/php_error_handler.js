@@ -1,7 +1,5 @@
 'use strict';
-const phpErrorHandler = angular.module('phpErrorHandler', []);
-
-phpErrorHandler.controller('phpErrorHandlerCtrl',['$scope', '$http', function($scope, $http) {
+angular.module('portfolio').controller('phpErrorHandlerCtrl',['$scope', '$http', function($scope, $http) {
 	$scope.error = {};
 	$scope.timeout_in_progress = false;
 	$scope.click = function(type){
