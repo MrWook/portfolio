@@ -1,4 +1,4 @@
 <?php
-	asd
+asd
 Im_an_error()
 asd
