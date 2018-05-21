@@ -1,0 +1,36 @@
+<div class="row height_100">
+	<div ng-controller="portfolioAlertCtrl" class="scrollbar height_100">
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXPLANATION"></h4>
+			<p translate="MW_ALERT_EXPLANATION" class="continuous_text"></p>
+		</section>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXAMPLE"></h4>
+			<form name="form" novalidate >
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 error_message_box ">
+					<label for="text" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Text</label>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<input type="text" name="text" ng-model="message.text">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 error_message_box ">
+					<label for="type" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Type</label>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<select name="type" ng-model="message.type">
+							<option value="success">{{"MW_ALERT_SUCCESS"|translate}}</option>
+							<option value="warning">{{"MW_ALERT_WARNING"|translate}}</option>
+							<option value="danger">{{"MW_ALERT_DANGER"|translate}}</option>
+							<option value="info">{{"MW_ALERT_INFO"|translate}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container">
+					<button type="submit" ng-click="open()" class="btn">{{"MW_ALERT_OPEN_ALERT"|translate}}</button>
+				</div>
+			</form>
+		</section>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12 continuous_text">
+			<span>{{"PROJECTS_GITHUB_PAGE_TEXT"|translate}}<a>{{"PROJECTS_GITHUB_PAGE"|translate}}</a></span>
+		</section>
+	</div>
+</div>

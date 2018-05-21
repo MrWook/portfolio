@@ -1,0 +1,22 @@
+<div class="row height_100">
+	<div ng-controller="portfolioLoaderCtrl" class="scrollbar height_100">
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXPLANATION"></h4>
+			<p translate="MW_LOADER_EXPLANATION" class="continuous_text"></p>
+		</section>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h4 translate="PROJECTS_EXAMPLE"></h4>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container">
+					<button type="button" ng-click="loader_start()" class="btn">Start</button>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container">
+					<button type="button" ng-click="loader_stop()" class="btn">Stop</button>
+				</div>
+			</div>
+		</section>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12 continuous_text">
+			<span>{{"PROJECTS_GITHUB_PAGE_TEXT"|translate}}<a>{{"PROJECTS_GITHUB_PAGE"|translate}}</a></span>
+		</section>
+	</div>
+</div>
