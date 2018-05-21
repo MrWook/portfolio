@@ -1,0 +1,101 @@
+@import 'options/variables';
+@import 'options/mixin';
+
+.notecard_wrapper{
+	height: 40%;
+	margin-bottom      :30px;
+}
+
+.notecard{
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06, 0 0 20px 2px $primary-box-shadow_03);
+	background-color   :$primary-background-color_08;
+
+	cursor             :pointer;
+	outline            :none;
+	padding            :0;
+	/*super important setting so that the corner border will stay inside the div not outside because of padding and margin*/
+	@include transform(translateY(0));
+	height:100%;
+}
+
+.notecard-heading{
+	border                  :0;
+	@include border-top-left-radius(3px);
+	@include border-top-right-radius(3px);
+	padding                 :10px 15px;
+	text-align              :center;
+}
+
+.notecard-body{
+	padding :15px;
+}
+
+.notecard a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	color :$primary-color_06;
+}
+.notecard a:focus{
+	text-decoration:none;
+}
+
+.notecard:before,
+.notecard:after,
+.notecard a:before,
+.notecard a:after{
+	content                     :'';
+	position                    :absolute;
+	width                       :10px;
+	height                      :10px;
+	border                      :solid $primary-border-color_10;
+	@include transition-duration(0.3s);
+}
+
+.notecard:before{
+	border-width :1px 0 0 1px;
+	left         :10px;
+	top          :10px;
+}
+
+.notecard:after{
+	border-width :0 0 1px 1px;
+	left         :10px;
+	bottom       :10px;
+}
+
+.notecard a:before{
+	border-width :1px 1px 0 0;
+	right        :10px;
+	top          :10px;
+}
+
+.notecard a:after{
+	border-width :0 1px 1px 0;
+	bottom       :10px;
+	right        :10px;
+}
+
+.notecard:hover:before{
+	left :0;
+	top  :0;
+}
+
+.notecard:hover:after{
+	left   :0;
+	bottom :0;
+}
+
+.notecard a:hover:before{
+	right :0;
+	top   :0;
+}
+
+.notecard a:hover:after{
+	bottom :0;
+	right  :0;
+}
+
+.notecard a:hover{
+	text-decoration :none;
+}

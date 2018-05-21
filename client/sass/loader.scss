@@ -1,0 +1,23 @@
+@import 'options/variables';
+@import 'options/mixin';
+
+.mw-loader div{
+	border-color :$primary-border-color_10
+}
+
+.loader_text{
+	color :$primary-color_10;
+}
+
+.loader_1{
+	@include box-shadow(0 10px 20px -5px $primary-box-shadow_05, inset 0 -10px 20px -5px $primary-box-shadow_05);
+}
+
+.loader_2{
+	@include box-shadow(10px 0 20px -5px $primary-box-shadow_05, inset -10px 0 20px -5px $primary-box-shadow_05);
+}
+
+.loader_3{
+	@include box-shadow(0 -10px 20px -5px $primary-box-shadow_05, inset 0 10px 20px -5px $primary-box-shadow_05);
+
+}

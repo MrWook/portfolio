@@ -1,0 +1,112 @@
+@import '../options/variables';
+@import '../options/mixin';
+
+.date_range_picker .form-control[disabled],
+.date_range_picker .form-control[readonly],
+.date_range_picker fieldset[disabled] .form-control,
+.date_range_picker .form-control:focus{
+	color            :$primary-color_06;
+	background-color :$primary-background-color_08;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06);
+}
+
+.uib-datepicker-popup,
+.uib-daypicker table{
+	background-color :$primary-background-color_10;
+}
+
+.uib-datepicker button,
+.date_range_picker button{
+	border      :0;
+	color       :$primary-color_08;
+	background  :$primary-background-color_08 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06);
+	outline     :none;
+	text-shadow :none;
+}
+//fix for firefox
+.date_range_picler input{
+	caret-color: transparent;
+	cursor: default;
+}
+
+.date_range_picker .input-group-btn button{
+	padding: 7px 12px;
+}
+
+.uib-datepicker button:hover,
+.uib-datepicker button:focus,
+.date_range_picker button:hover,
+.date_range_picker button:focus{
+	color       :$primary-color_08;
+	background  :$primary-background-color_08 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_04);
+	text-shadow :none;
+	outline     :none;
+}
+
+.uib-datepicker button:active,
+.date_range_picker button:active,
+.uib-datepicker button:active:hover,
+.date_range_picker button:active:hover,
+.uib-datepicker button.active,
+.uib-datepicker button.active:hover,
+.date_range_picker button.active,
+.date_range_picker button.active:hover{
+	color       :$primary-color_04;
+	background  :$primary-background-color_10 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_02);
+	text-shadow :none;
+	outline     :none;
+}
+
+.uib-datepicker button[disabled],
+.date_range_picker button[disabled]{
+	color       :$primary-color_02;
+	background  :$primary-background-color_03 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_00);
+	text-shadow :none;
+	outline     :none;
+}
+
+.uib-datepicker button[disabled]:hover{
+	color       :$primary-color_04;
+	background  :$primary-background-color_04 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_01);
+	text-shadow :none;
+	outline     :none;
+}
+
+.uib-button-bar .uib-clear{
+	@include box-shadow(inset 0 0 12px 1px $danger-box-shadow_06);
+}
+
+.uib-button-bar .uib-clear:hover,
+.uib-button-bar .uib-clear:focus{
+	@include box-shadow(inset 0 0 12px 1px $danger-box-shadow_04);
+}
+
+.uib-button-bar .uib-clear:active,
+.uib-button-bar .uib-clear:active:hover{
+	@include box-shadow(inset 0 0 12px 1px $danger-box-shadow_02);
+}
+
+.uib-button-bar .uib-close{
+	@include box-shadow(inset 0 0 12px 1px $success-box-shadow_06);
+}
+
+.uib-button-bar .uib-close:hover,
+.uib-button-bar .uib-close:focus{
+	@include box-shadow(inset 0 0 12px 1px $success-box-shadow_04);
+}
+
+.uib-button-bar .uib-close:active,
+.uib-button-bar .uib-close:active:hover{
+	@include box-shadow(inset 0 0 12px 1px $success-box-shadow_02);
+}
+
+.uib-day.selected .btn{
+	color      :$primary-color_10;
+	background :$primary-background-color_10 none;
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_10);
+}

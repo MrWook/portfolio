@@ -1,0 +1,168 @@
+@import 'options/variables';
+@import 'options/mixin';
+
+/*
+* General
+*/
+html{
+	height   :100%;
+	position :relative;
+}
+
+body{
+	overflow       :hidden;
+	height         :100%;
+	position       :relative;
+	margin         :0;
+	padding        :0;
+	font-family    :"Lucida Console", Monaco, monospace;
+	text-transform :uppercase;
+}
+
+#content{
+	width    :100%;
+	height   :100%;
+	overflow :hidden;
+}
+
+/*color*/
+
+body{
+	/*background-size  :100% 100%, 100% 100%, 6em 6em, 6em 6em, 6em 6em, 6em 6em;*/
+	background-image :radial-gradient(rgba(17, 23, 29, 0), #11171d 75%), radial-gradient(rgba(112, 230, 255, 0.2), rgba(0, 0, 0, 0)), linear-gradient(rgba(112, 230, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, transparent calc(100% - 1px), rgba(112, 230, 255, 0.1) calc(100% - 1px)), linear-gradient(90deg, #11171d calc(100% - 1px), transparent calc(100% - 1px)), linear-gradient(#70e6ff 1px, transparent 1px);
+	background-color :#000000;
+}
+
+body{
+	/*made by Smattila*/
+	/*http://smattila.deviantart.com/art/Starfield-stock-154786926*/
+	/*background-image: url('../images/starfield_Smattila.png');*/
+	background-size  :cover;
+	/*http://zummerfish.deviantart.com/art/Starfield-1132-by-zummerfish-358192113*/
+	background-image :url('../images/starfield_devzummerfish.png');
+}
+
+@media (max-width :650px){
+	body{
+		background-size  :100% 100%, 100% 100%, 6em 6em, 6em 6em, 6em 6em, 6em 6em;
+		background-image :radial-gradient(rgba(17, 23, 29, 0), #11171d 75%), radial-gradient(rgba(112, 230, 255, 0.2), rgba(0, 0, 0, 0)), linear-gradient(rgba(112, 230, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, transparent calc(100% - 1px), rgba(112, 230, 255, 0.1) calc(100% - 1px)), linear-gradient(90deg, #11171d calc(100% - 1px), transparent calc(100% - 1px)), linear-gradient(#70e6ff 1px, transparent 1px);
+		background-color :#000000;
+	}
+}
+/*
+ * error on get config from database
+ */
+.filesystem_error{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	color          :$primary-color_06;
+	font-size      :calc(100% + 2vw);
+}
+/*
+* content
+*/
+.page{
+	height    :100%;
+	padding   :3% 6% 3% 6%;
+	font-size :calc(100% + 0.3vw);
+}
+
+/*set color*/
+
+.page{
+	color            :$primary-color_06;
+	background-color :$primary-background-color_05;
+	border           :1px solid rgba(12, 103, 161, 0.8);
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06, -5px 8px 20px 2px $primary-box-shadow_03);
+}
+
+/*about*/
+.image_wrapper{
+	/*width:25%;*/
+}
+
+.portrait{
+	@include border-radius(250px);
+	width :100%;
+}
+
+.loading{
+	display :none;
+}
+
+/*Header size*/
+h1{
+	font-size :calc(100% + 1vw);
+}
+
+h2{
+	font-size :calc(100% + 0.9vw);
+}
+
+h3{
+	font-size :calc(100% + 0.8vw);
+}
+
+h4{
+	font-size :calc(100% + 0.7vw);
+}
+
+h5{
+	font-size :calc(100% + 0.6vw);
+}
+
+h6{
+	font-size :calc(100% + 0.5vw);
+}
+
+div,
+a{
+	outline :none;
+}
+a{
+	cursor: pointer;
+}
+
+/*sections*/
+h4,
+h6{
+	border-bottom        :1px solid transparent;
+	-moz-border-image    :-moz-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
+	-webkit-border-image :-webkit-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
+	-o-border-image      :-o-linear-gradient(right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
+	border-image         :linear-gradient(to right, rgba(12, 103, 161, 0.8) 0%, rgba(0, 0, 0, 0) 100%) 1;
+}
+
+.height_100{
+	height :100%;
+}
+.padding_top_15{
+	padding-top:15px;
+}
+
+.continuous_text{
+	text-transform:none;
+}
+
+/*custom scrollbar for webkit*/
+.scrollbar{
+	overflow-y :auto;
+	overflow-x :hidden;
+}
+
+.scrollbar::-webkit-scrollbar-track{
+	@include border-radius(10px);
+	background-color :$primary-background-color_08;
+}
+
+.scrollbar::-webkit-scrollbar{
+	width :12px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+	@include border-radius(10px);
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_06);
+}
