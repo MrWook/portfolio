@@ -12,7 +12,7 @@ module.exports = function(copyright) {
 						'public/modules/*.js',
 						'public/views/init.js',
 					],
-					dest:   'public/dist/app.js'
+					dest:   'public/dist/app.min.js'
 				},
 			]
 		},
