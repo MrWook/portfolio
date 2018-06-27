@@ -157,14 +157,14 @@ angular.module('portfolio-directives').directive('ppHelper', ['$rootScope', '$ti
 						add_flicker(element);
 					}
 				}
-			}, 10000);
+			}, 60000);
 
 			//set the width for arrow pad
 			function set_height(){
 				const content_children = content.children();
 				const navbar_bottom = angular.element(content_children[2]);
 				const navbar_bottom_li = navbar_bottom.find('LI');
-				const li = angular.element(navbar_bottom_li[1]);
+				const li = angular.element(navbar_bottom_li[2]);
 				let height = li.prop('offsetHeight');
 				angular.element(li.children()).css('width', height+'px');
 			}
@@ -185,7 +185,7 @@ angular.module('portfolio-directives').directive('ppHelper', ['$rootScope', '$ti
 				const content_children = content.children();
 				const navbar_bottom = angular.element(content_children[2]);
 				const navbar_bottom_li = navbar_bottom.find('LI');
-				let cross = angular.element(navbar_bottom_li[1]);
+				let cross = angular.element(navbar_bottom_li[2]);
 				if (debounce !== null) {
 					$timeout.cancel(debounce);
 				}
