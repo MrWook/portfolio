@@ -40,3 +40,12 @@ form .error_message_box.has-success div input{
 form .error_message_box div ng-message{
 	font-size :60%;
 }
+.tooltip-arrow{
+	border-left-color: $primary-background-color_10!important;
+}
+
+.tooltip-inner{
+	@include box-shadow(inset 0 0 12px 1px $primary-box-shadow_04, 0 0 20px 2px $primary-box-shadow_03);
+	background: $primary-background-color_10 none;
+	color: $primary-color_08;
+}
