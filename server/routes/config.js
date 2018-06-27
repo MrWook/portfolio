@@ -7,12 +7,12 @@ router.post('/config', function(req, res) {
 	const db = req.db;
 	const collection = db.get('system_parameter');
 	let config = {};
-	if(req.body.language == 'de' || req.body.language == 'de-DE')
+	let language = req.acceptsLanguages()[0];
+	if(language == 'de' || language == 'de-DE')
 		config.language = 'de_DE';
 	else
 		config.language = 'en_US';
 	collection.find({},{},function(error, data){
-		console.log(error);
 		for(let i = 0; i < data.length; i++){
 			config[data[i]['name']] = data[i]['value'];
 		}
