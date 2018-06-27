@@ -20,6 +20,7 @@ angular.module('portfolio-services').service('PPHelper', ['$rootScope', '$locati
 					return i--;
 			}
 		}
+		return 0;
 	};
 
 	PPHelper.get_indexes = function(direction){
@@ -33,8 +34,9 @@ angular.module('portfolio-services').service('PPHelper', ['$rootScope', '$locati
 			if(menu_sub != undefined){
 				const subpage = path_array[1];
 				let index_subpage = -1;
-				if(subpage != undefined)
+				if(subpage != undefined){
 					index_subpage = PPHelper.page_get(menu_sub, subpage, 0);
+				}
 				return_val['index_sub'] = index_subpage;
 				return_val['submenu_length'] = menu_sub.length;
 			}
