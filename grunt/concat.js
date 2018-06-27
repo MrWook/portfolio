@@ -47,6 +47,18 @@ module.exports = function(){
 		options:  {
 			// sourceMap: true,
 		},
+		modules: {
+			files: [
+				{
+					expand: false,
+					src:    [
+						'public/modules/*.js',
+						'public/views/init.js',
+					],
+					dest:   'public/dist/app.js'
+				},
+			]
+		},
 		dist:     {
 			files: [
 				{
