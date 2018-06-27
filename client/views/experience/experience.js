@@ -32,7 +32,7 @@ angular.module('portfolio').controller('ExperienceCtrl',['$scope', function($sco
 		},
 		{
 			name: 'javascript',
-			value: 63
+			value: 68
 		},
 		{
 			name: 'angularjs',
@@ -44,7 +44,7 @@ angular.module('portfolio').controller('ExperienceCtrl',['$scope', function($sco
 		},
 		{
 			name: 'nodejs',
-			value: 20
+			value: 30
 		},
 		{
 			name: 'php',
@@ -56,7 +56,7 @@ angular.module('portfolio').controller('ExperienceCtrl',['$scope', function($sco
 		},
 		{
 			name: 'mongodb',
-			value: 15
+			value: 30
 		},
 		{
 			name: 'apache',
@@ -68,7 +68,7 @@ angular.module('portfolio').controller('ExperienceCtrl',['$scope', function($sco
 		},
 		{
 			name: 'linux',
-			value: 35
+			value: 45
 		},
 		{
 			name: 'PHPStorm',
