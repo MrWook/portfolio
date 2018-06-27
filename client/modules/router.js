@@ -10,21 +10,21 @@ angular.module('portfolio-router').config(['$locationProvider' ,'$routeProvider'
 		$ocLazyLoadProvider.config({
 			debug: false
 		});
-		$routeProvider.when('/'+PPconfig.path+':page', {
+		$routeProvider.when('/'+PPconfig.path+':page/', {
 			templateUrl: function(params){
 				return PPconfig.path+params.page+'/'+params.page+'.html';
 			},
 			resolve: {
 				loadMyCtrl: ['$ocLazyLoad', '$route', '$rootScope', '$location', '$$animateJs', loadMyCtrl]
 			}
-		}).when('/'+PPconfig.path+':page/:subpage', {
+		}).when('/'+PPconfig.path+':page/:subpage/', {
 			templateUrl: function(params){
 				return PPconfig.path+params.page+'/'+params.subpage+'/'+params.subpage+'.html'
 			},
 			resolve: {
 				loadMyCtrl: ['$ocLazyLoad', '$route', '$rootScope', '$location', '$$animateJs', loadMyCtrl]
 			}
-		}).otherwise('/'+PPconfig.path+'about');
+		}).otherwise('/'+PPconfig.path+'about/');
 
 		function loadMyCtrl($ocLazyLoad, $route, $rootScope, $location, $$animateJs){
 			const params = $route.current.params;
@@ -69,7 +69,7 @@ angular.module('portfolio-router').config(['$locationProvider' ,'$routeProvider'
 
 		function index_get(menu, page){
 			let menu_length = menu.length;
-			if(page == 'contact')
+			if(page == 'contact' || page == 'privacy_policies' || page == 'legal_notice')
 				return -1;
 			for(let i = 0; i < menu_length; i++){
 				if(menu[i].name === page)
