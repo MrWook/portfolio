@@ -8,6 +8,6 @@ public/modules/
 public/views/
 public/zipped/
 server/config/
-images/me.png
+public/images/me.png
 .user.ini
 database.txt
