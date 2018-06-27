@@ -137,12 +137,12 @@ body .navbar_top li:focus{
 	-ms-transition     :filter 0.20s linear, -ms-transform 0.20s linear;
 	-o-transition      :filter 0.20s linear, -o-transform 0.20s linear;
 	transition         :filter 0.20s linear, transform 0.20s linear;
-	width              :60%;
 	display            :flex;
 	align-items        :center;
 	justify-content    :center;
 	@include filter(drop-shadow(0px 0px 4px $primary-border-color_10));
 	@include transform(rotateY(0deg));
+	position :absolute;
 }
 
 .navbar_bottom .arrow-pad-wrapper.left{
@@ -175,24 +175,27 @@ body .navbar_top li:focus{
 	@include clip-path(polygon(0 35%, 35% 35%, 35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%));
 }
 
-body .navbar_bottom .nav .contact_me{
-	width            :20%;
+body .navbar_bottom .nav .links{
 	background-color :transparent;
 	outline          :none;
 }
 
-body .navbar_bottom .nav .contact_me a{
-	padding-top :5%;
+body .navbar_bottom .nav .links a{
+	padding-top :1vw;
 }
 
-body .navbar_bottom .nav .contact_me a:hover,
-body .navbar_bottom .nav .contact_me a:focus{
+body .navbar_bottom .nav .links a:hover,
+body .navbar_bottom .nav .links a:focus{
 	background :transparent none;
 }
 
-.navbar_bottom .contact_me a:hover{
+.navbar_bottom .links a:hover{
 	cursor :pointer
 }
+.navbar_bottom .links.links_right{
+	margin-left:auto;
+}
+
 
 .navbar_bottom .nav > li{
 	height :calc(100% - 20px);
@@ -424,12 +427,11 @@ body .navbar_bottom .nav .contact_me a:focus{
 
 @media (max-width :650px){
 
-	nav,
-	.navbar_bottom{
+	nav{
 		height:0;
 		min-height:0;
 	}
-	.navbar_bottom,
+
 	.navbar_top{
 		display :none;
 	}
@@ -530,11 +532,44 @@ body .navbar_bottom .nav .contact_me a:focus{
 		outline:none;
 	}
 
+
+	.navbar_bottom .clip-wrapper-down-left,
+	.navbar_bottom .navbar_bottom_after_helper,
+	.navbar_bottom .lines_top,
+	.navbar_bottom .clip-wrapper-down-right,
+	.navbar_bottom .arrow-pad-wrapper,
+	.navbar_bottom:before{
+		display:none;
+	}
+
+	.navbar_bottom .lines_middle{
+		border:none;
+	}
+
+	.navbar_bottom .lines_middle:before{
+		top:-6px;
+	}
+	.navbar_bottom .lines_middle:after{
+		bottom:-6px;
+	}
+
+	.navbar_bottom .nav{
+		margin:unset;
+		width :100%;
+	}
+
+	.navbar_bottom .nav .dropdown{
+		width:unset;
+		float:left;
+	}
+	body .navbar_bottom .nav .links{
+		width:unset;
+		float:right;
+	}
 }
 
 /*Dropdown's*/
 .nav .dropdown{
-	width            :20%;
 	background-color :transparent;
 	outline          :none;
 }
@@ -542,6 +577,9 @@ body .navbar_bottom .nav .contact_me a:focus{
 .nav .dropdown a{
 	padding          :5% 10px 5px;
 	background-color :transparent;
+}
+.nav .dropdown a.dropdown-toggle{
+	padding-top:1vw;
 }
 
 .nav .dropdown a:hover,
