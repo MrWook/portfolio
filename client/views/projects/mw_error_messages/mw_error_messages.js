@@ -1,5 +1,6 @@
 'use strict';
-angular.module('portfolio').controller('ErrorMsgCtrl',['$scope', function($scope) {
+angular.module('portfolio').controller('ErrorMsgCtrl',['$scope', 'PPconfig', function($scope, PPconfig) {
+	$scope.github_link = PPconfig.github+'mw-error-messages';
 	$scope.mwOptions_email = {
 		tooltip: true
 	};

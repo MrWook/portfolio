@@ -1,5 +1,6 @@
 'use strict';
-angular.module('portfolio').controller('DatePickerRangeCtrl', ['$scope', 'mwMultiSelectService', function($scope, mwMultiSelectService){
+angular.module('portfolio').controller('DatePickerRangeCtrl', ['$scope', 'mwMultiSelectService', 'PPconfig', function($scope, mwMultiSelectService, PPconfig){
+	$scope.github_link = PPconfig.github+'mw-datepicker-range';
 	//datepicker range popup
 	$scope.activeDate    = null;
 	$scope.selectedDates = [];

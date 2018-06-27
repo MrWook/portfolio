@@ -1,5 +1,6 @@
 'use strict';
-angular.module('portfolio').controller('portfolioLoaderCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
+angular.module('portfolio').controller('portfolioLoaderCtrl', ['$scope', '$rootScope', 'PPconfig', function($scope, $rootScope, PPconfig){
+	$scope.github_link = PPconfig.github+'mw-loader';
 	$scope.loader_start = function(){
 		$rootScope.$broadcast('mw-loader-on');
 	};

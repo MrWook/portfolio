@@ -1,5 +1,6 @@
 'use strict';
-angular.module('portfolio').controller('phpErrorHandlerCtrl',['$scope', '$http', function($scope, $http) {
+angular.module('portfolio').controller('phpErrorHandlerCtrl',['$scope', '$http', 'PPconfig', function($scope, $http, PPconfig) {
+	$scope.github_link = PPconfig.github+'php-error-handler';
 	$scope.error = {};
 	$scope.timeout_in_progress = false;
 	$scope.click = function(type){
