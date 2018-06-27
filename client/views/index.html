@@ -33,27 +33,11 @@
 		<link href="zipped/style.css.gz" rel="stylesheet">
 
 		<!--<script src="dist/external_scripts.js"></script>-->
-		<!--<script src="dist/app.js"></script>-->
+		<!--<script src="dist/app.min.js"></script>-->
 		<script src="zipped/external_scripts.js.gz"></script>
 		<script src="zipped/app.js.gz"></script>
 
-		<!--<script src="angular/angular.js"></script>-->
-		<!--<script src="jquery/dist/jquery.slim.js"></script>-->
-		<!--<script src="bootstrap/dist/js/bootstrap.js"></script>-->
-
-		<!--<script src="modules/factories.js"></script>-->
-		<!--<script src="modules/filter.js"></script>-->
-		<!--<script src="modules/services.js"></script>-->
-		<!--<script src="modules/config.js"></script>-->
-		<!--<script src="modules/frame_controller.js"></script>-->
-		<!--<script src="modules/directives.js"></script>-->
-		<!--<script src="modules/router.js"></script>-->
-		<!--<script src="modules/run.js"></script>-->
-		<!--<script src="modules/templates.js"></script>-->
-
-		<!--<script src="views/init.js"></script>-->
 	</head>
-
 	<body pp-helper>
 		<div id="content" class="loading">
 			<nav ng-controller="MenuCtrl">
@@ -92,7 +76,7 @@
 			</main>
 
 
-			<footer class="navbar_bottom" ng-controller="FooterCtrl" ng-if="!$root.mobile">
+			<footer class="navbar_bottom" ng-controller="FooterCtrl">
 				<div class="clip-wrapper-down-left">
 					<div class="clip-down-left"></div>
 				</div>
@@ -103,10 +87,12 @@
 				<div class="lines_middle"></div>
 				<div class="lines_top"></div>
 				<ul class="nav">
-					<li class="contact_me"><a class="pull-left" ng-href="{{path}}contact">{{'MENU_CONTACT_ME'|translate}}</a></li>
+					<li class="links"><a class="pull-left" ng-href="{{path}}legal_notice">{{'MENU_LEGAL_NOTICE'|translate}}</a></li>
+					<li class="links"><a class="pull-left" ng-href="{{path}}privacy_policies">{{'MENU_PRIVACY_POLICIES'|translate}}</a></li>
 					<li class="arrow-pad-wrapper">
 						<div class="arrow-pad"></div>
 					</li>
+					<li class="links links_right"><a class="pull-right" ng-href="{{path}}contact">{{'MENU_CONTACT_ME'|translate}}</a></li>
 					<li class="dropdown dropup">
 						<a href="#" class="dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">
 							{{'MENU_LANGUAGE'|translate}}
@@ -123,19 +109,4 @@
 			<div class="filesystem_error"><span > You must have JavaScript enabled to use this app.</span></div>
 		</noscript>
 	</body>
-
-	<!--<script src="angular-animate/angular-animate.js"></script>-->
-	<!--<script src="angular-aria/angular-aria.js"></script>-->
-	<!--<script src="angular-resource/angular-resource.js"></script>-->
-	<!--<script src="angular-route/angular-route.js"></script>-->
-	<!--<script src="angular-touch/angular-touch.js"></script>-->
-	<!--<script src="angular-messages/angular-messages.js"></script>-->
-	<!--<script src="angular-translate/angular-translate.js"></script>-->
-	<!--<script src="angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>-->
-	<!--<script src="oclazyload/dist/ocLazyLoad.js"></script>-->
-	<!--<script src="js/ui-bootstrap-custom-tpls-2.5.0.js"></script>-->
-	<!--<script src="mw-loader/dist/js/mw-loader.js"></script>-->
-	<!--<script src="mw-error-messages/dist/error_message.js"></script>-->
-	<!--<script src="mw-datepicker-range/dist/mw-datepicker-range.js"></script>-->
-	<!--<script src="mw-alert/dist/js/mw-alert.js"></script>-->
 </html>
