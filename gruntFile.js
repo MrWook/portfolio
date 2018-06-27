@@ -1,9 +1,11 @@
 'use strict';
 module.exports = function(grunt){
-	let copyright = '/**\n'+
-					' * @version v<%= pkg.version %>\n'+
-					' * Copyright (c) '+(new Date()).getFullYear()+' MrWook\n'+
-					' */\n\r';
+	let copyright = `/**
+* @version v<%= pkg.version %>
+* @link <%= pkg.homepage %>
+* @license <%= pkg.license %>
+* Copyright (c) ${(new Date()).getFullYear()} <%= pkg.author %>
+*/\r`;
 
 	// Load all grunt tasks automatically
 	require('load-grunt-tasks')(grunt);
