@@ -31,7 +31,7 @@ app.use(helmet({
 	expectCt: true,
 	hidePoweredBy: { setTo: 'Malbolge 4.2' },
 	hpkp : false,
-	hsts : false,
+	hsts : true,
 	referrerPolicy: true,
 }));
 
