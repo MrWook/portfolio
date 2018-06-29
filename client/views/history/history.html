@@ -4,7 +4,11 @@
 		<div class="timeline">
 			<div ng-repeat="data in career track by $index" ng-class="{'odd': $odd, 'even': $even}" ng-style="data.style" class="timeline_pages">
 				<section>
-					<header>{{data.time | date:'dd.MM.yyyy'}}</header>
+					<header>
+						{{data.from | date:'dd.MM.yyyy'}} -
+						<span ng-if="data.to != '0000-00-00'">{{data.to | date:'dd.MM.yyyy'}}</span>
+						<span ng-if="data.to == '0000-00-00'" translate="TODAY"></span>
+					</header>
 					<main translate="{{data.name}}"></main>
 				</section>
 			</div>
