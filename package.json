@@ -15,8 +15,8 @@
 		"body-parser": "^1.17.2",
 		"express": "^4.14.1",
 		"helmet": "^3.10.0",
-		"mongodb": "^3.0.2",
-		"monk": "^6.0.5",
+		"mongodb": "^3.1.13",
+		"monk": "^7.0.0",
 		"node-phpfpm": "^1.0.1",
 		"ua-parser-js": "^0.7.14"
 	},
