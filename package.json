@@ -11,7 +11,7 @@
 		"start": "NODE_ENV=production node index.js"
 	},
 	"dependencies": {
-		"async": "^2.6.0",
+		"async": "^3.2.2",
 		"body-parser": "^1.17.2",
 		"express": "^4.14.1",
 		"helmet": "^3.10.0",
